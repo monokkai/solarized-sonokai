@@ -112,7 +112,13 @@ M.palette = {
 	jsx_tag = "#AEC544", -- div, h2, section       9.76:1
 	jsx_attr = "#588FC8", -- as=, bg=, className=   5.55:1
 	jsx_text = "#E8E8E8", -- literal text in tags  13.7:1
-	jsx_import = "#DC5F3C", -- import / from / type   5.16:1
+	jsx_import = "#DC5F3C", -- (unused: superseded by jsx_keyword)
+	-- import / from / export / default and the other module keywords.
+	-- Measures 2.96:1 against the background, i.e. under the 4.5:1
+	-- readable floor -- deliberate, these sit in a block at the top of a
+	-- file and are meant to recede. #CBE302 is the same hue at 13:1 if a
+	-- brighter reading is wanted.
+	jsx_keyword = "#5A6501",
 
 	git_add = son.green,
 	git_change = son.yellow,

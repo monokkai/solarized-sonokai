@@ -174,9 +174,13 @@ function M.get(c)
 		["@tag.delimiter"] = { fg = c.jsx_bracket }, -- < > </ />
 		["@markup.raw.block"] = { fg = c.jsx_text },
 
-		-- `import` / `from` / `type` read as their own thing, distinct from
-		-- other keywords, since import blocks sit apart at the top of a file.
-		["@keyword.import"] = { fg = c.jsx_import },
+		-- Module keywords -- import / from / export / default. These sit in a
+		-- block at the top of a file and read as structure rather than logic,
+		-- so they get their own colour away from the generic red @keyword.
+		-- `import`, `from` and `export` all resolve to @keyword.import.
+		-- `default` is plain @keyword, so it is left alone: colouring that
+		-- group would repaint every keyword in the file.
+		["@keyword.import"] = { fg = c.jsx_keyword },
 
 		["@markup.strong"] = { fg = c.fg, bold = true },
 		["@markup.italic"] = { fg = c.fg, italic = true },

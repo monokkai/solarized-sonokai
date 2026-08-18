@@ -1,0 +1,6 @@
+# Lua and docs are LF-only regardless of the cloner's core.autocrlf setting.
+* text=auto eol=lf
+*.lua text eol=lf
+*.md  text eol=lf
+LICENSE text eol=lf
+NOTICE  text eol=lf

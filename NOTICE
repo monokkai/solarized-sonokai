@@ -1,0 +1,35 @@
+solarized-sonokai
+Copyright 2026 monokkai
+
+This product includes software developed by third parties, listed below.
+
+--------------------------------------------------------------------------------
+
+solarized-osaka.nvim
+Copyright 2024 Takuya Matsuyama
+Licensed under the Apache License, Version 2.0
+https://github.com/craftzdog/solarized-osaka.nvim
+
+Portions of this work derive from solarized-osaka.nvim's colour palette,
+specifically the background/neutral ramp (base04..base3) and the yellow, orange,
+red, magenta, violet, blue, cyan and green accent ramps. Those values are
+reproduced in lua/solarized-sonokai/palette.lua under `M.solarized`.
+
+Modifications: only a subset of the palette is used; the accent values used for
+syntax highlighting are substituted with those from sonokai (see below), and the
+highlight group definitions in lua/solarized-sonokai/theme.lua are original work.
+
+--------------------------------------------------------------------------------
+
+sonokai
+Copyright (c) 2020 sainnhe
+Licensed under the MIT License
+https://github.com/sainnhe/sonokai
+
+Portions of this work derive from sonokai's colour palette, specifically the
+`default` variant's fg, red, orange, yellow, green, blue, purple, grey and
+bg_{red,yellow,green,blue,purple} values. Those are reproduced in
+lua/solarized-sonokai/palette.lua under `M.sonokai`.
+
+Modifications: only the palette values are used; none of sonokai's vimscript
+highlight logic is included.

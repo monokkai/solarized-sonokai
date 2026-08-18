@@ -114,12 +114,11 @@ M.palette = {
 	jsx_tag = "#AEC544", -- div, h2, section       9.76:1
 	jsx_attr = "#588FC8", -- as=, bg=, className=   5.55:1
 	jsx_text = "#E8E8E8", -- literal text in tags  13.7:1
-	-- import / from / export and the other module keywords. 4.13:1 -- just
-	-- under the 4.5:1 floor, which suits a block that sits at the top of a
-	-- file and should not compete with the code below it.
-	jsx_keyword = "#849902",
+	-- import / from / export / default. Same hue as solarized's green ramp,
+	-- lifted to 11.05:1 so it reads clearly at the top of a file.
+	jsx_keyword = "#B6D303",
 	-- kept as an alias so anything still reading jsx_import keeps working
-	jsx_import = "#849902",
+	jsx_import = "#B6D303",
 
 	git_add = son.green,
 	git_change = son.yellow,

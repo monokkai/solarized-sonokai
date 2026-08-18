@@ -53,8 +53,10 @@ function M.get(c)
 		-- which defeats the bubble caps and any transparency in the theme.
 		StatusLine = { fg = c.fg, bg = none },
 		StatusLineNC = { fg = c.comment, bg = none },
-		TabLine = { fg = c.comment, bg = c.bg_highlight },
-		TabLineFill = { bg = c.bg_highlight },
+		-- Transparent: bufferline draws its own tab backgrounds on top, and an
+		-- opaque fill here would paint the full-width bar behind them.
+		TabLine = { fg = c.comment, bg = none },
+		TabLineFill = { bg = none },
 		TabLineSel = { fg = c.bg, bg = c.yellow, bold = true },
 		WildMenu = { fg = c.bg, bg = c.blue },
 		Pmenu = { fg = c.fg, bg = c.bg_highlight },

@@ -14,16 +14,10 @@ end
 
 local c = palette.palette
 
--- Powerline needs each section to carry its own background: the  separator
--- is a filled glyph whose fg is the section it leaves and whose bg is the one
--- it enters, so adjacent sections must differ or the arrow is invisible.
---
---   a  accent fill      -- mode
---   b  base02           -- branch, diff, diagnostics
---   c  transparent      -- filename, lets the terminal through mid-bar
---   x  base02           -- lsp, encoding, filetype
---   y/z accent fill     -- progress, location
-local b_bg = c.border -- #063540, solarized base02
+-- Bubbles: only a and z are filled -- those are the pills the round caps close
+-- off. Everything between them is transparent so the terminal shows through,
+-- which is what makes the two ends read as separate bubbles rather than as the
+-- ends of one continuous bar.
 local base = c.bg_highlight -- #002c38, text colour on the accent fills
 local dim = c.fg_gutter
 local NONE = "NONE"
@@ -31,10 +25,10 @@ local NONE = "NONE"
 local function mode(accent)
 	return {
 		a = { fg = base, bg = accent, gui = "bold" },
-		b = { fg = accent, bg = b_bg },
+		b = { fg = accent, bg = NONE },
 		c = { fg = c.fg_dark, bg = NONE },
-		x = { fg = dim, bg = b_bg },
-		y = { fg = c.fg, bg = b_bg },
+		x = { fg = dim, bg = NONE },
+		y = { fg = c.fg, bg = NONE },
 		z = { fg = base, bg = accent, gui = "bold" },
 	}
 end

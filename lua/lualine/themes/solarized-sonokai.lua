@@ -14,18 +14,21 @@ end
 
 local c = palette.palette
 
-local bar = c.bg_highlight -- #002c38, solarized base03
+-- Transparent bar: sections b/c/x/y carry no background so the terminal shows
+-- through. Only a and z are filled, which is what the bubble caps round off --
+-- an opaque bar behind them would render as a square block.
+local base = c.bg_highlight -- #002c38, used as the text colour on filled caps
 local dim = c.fg_gutter -- #576d74, solarized base01
+local NONE = "NONE"
 
---- section a is a filled block, b/c sit on the bar
 local function mode(accent)
 	return {
-		a = { fg = bar, bg = accent, gui = "bold" },
-		b = { fg = accent, bg = bar },
-		c = { fg = c.fg, bg = bar },
-		x = { fg = dim, bg = bar },
-		y = { fg = c.fg_dark, bg = bar },
-		z = { fg = bar, bg = accent, gui = "bold" },
+		a = { fg = base, bg = accent, gui = "bold" },
+		b = { fg = accent, bg = NONE },
+		c = { fg = c.fg, bg = NONE },
+		x = { fg = dim, bg = NONE },
+		y = { fg = c.fg_dark, bg = NONE },
+		z = { fg = base, bg = accent, gui = "bold" },
 	}
 end
 
@@ -37,8 +40,8 @@ return {
 	command = mode(c.green),
 	terminal = mode(c.purple),
 	inactive = {
-		a = { fg = dim, bg = bar },
-		b = { fg = dim, bg = bar },
-		c = { fg = dim, bg = bar },
+		a = { fg = dim, bg = NONE },
+		b = { fg = dim, bg = NONE },
+		c = { fg = dim, bg = NONE },
 	},
 }

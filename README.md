@@ -97,4 +97,16 @@ lua/solarized-sonokai/theme.lua   highlight group definitions
 Both source palettes are exported whole as `palette.solarized` and
 `palette.sonokai`, so a different mix can be assembled without re-deriving the
 values.
-# solarized-sonokai
+
+## Credits
+
+This theme is a palette mix and would not exist without its two sources:
+
+- [solarized-osaka.nvim](https://github.com/craftzdog/solarized-osaka.nvim) by
+  Takuya Matsuyama — Apache 2.0
+- [sonokai](https://github.com/sainnhe/sonokai) by sainnhe — MIT
+
+## License
+
+Apache License 2.0, inherited from solarized-osaka.nvim. See `LICENSE` for the
+terms and `NOTICE` for what derives from where.

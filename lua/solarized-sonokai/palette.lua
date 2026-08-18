@@ -112,10 +112,8 @@ M.palette = {
 	jsx_component = "#C53836",
 	jsx_bracket = "#C83A37", -- < > </ />              5.16:1
 	jsx_tag = "#AEC544", -- div, h2, section       9.76:1
-	-- className=, as=, href=. 2.94:1 -- dim by intent, attribute names are
-	-- scaffolding around the values that matter. #3D98DB is the same hue
-	-- at 6.03:1 if a brighter reading is wanted.
-	jsx_attr = "#1C6397",
+	-- className=, as=, href=. 5.07:1
+	jsx_attr = "#298AD1",
 	jsx_text = "#E8E8E8", -- literal text in tags  13.7:1
 	-- import / from / export / default. Same hue as solarized's green ramp,
 	-- lifted to 11.05:1 so it reads clearly at the top of a file.

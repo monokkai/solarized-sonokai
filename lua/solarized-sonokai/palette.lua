@@ -103,6 +103,17 @@ M.palette = {
 	bg_blue = son.bg_blue,
 	bg_purple = son.bg_purple,
 
+	-- ── Markup accents ───────────────────────────────────────────────────────
+	-- Hand-tuned for JSX/TSX/Astro. These keep the hues that were dialled in
+	-- against this background rather than reusing the generic accents, so
+	-- brackets, tag names and attributes stay distinguishable from each other
+	-- at a glance. All measured against bg #001419.
+	jsx_bracket = "#C83A37", -- < > </ />              5.16:1
+	jsx_tag = "#AEC544", -- div, h2, section       9.76:1
+	jsx_attr = "#588FC8", -- as=, bg=, className=   5.55:1
+	jsx_text = "#E8E8E8", -- literal text in tags  13.7:1
+	jsx_import = "#DC5F3C", -- import / from / type   5.16:1
+
 	git_add = son.green,
 	git_change = son.yellow,
 	git_delete = son.red,

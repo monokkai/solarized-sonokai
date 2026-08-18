@@ -140,7 +140,6 @@ function M.get(c)
 		["@keyword.coroutine"] = { fg = c.red },
 		["@keyword.function"] = { fg = c.red },
 		["@keyword.operator"] = { fg = c.red },
-		["@keyword.import"] = { fg = c.orange },
 		["@keyword.type"] = { fg = c.red },
 		["@keyword.modifier"] = { fg = c.red },
 		["@keyword.repeat"] = { fg = c.red },
@@ -162,10 +161,19 @@ function M.get(c)
 		["@comment.note"] = { fg = c.bg, bg = c.green, bold = true },
 
 		-- Markup: html, xml, jsx, tsx, vue, svelte, astro, markdown
-		["@tag"] = { fg = c.red }, -- components / user tags
-		["@tag.builtin"] = { fg = c.green }, -- div, h2, section ...
-		["@tag.attribute"] = { fg = c.blue },
-		["@tag.delimiter"] = { fg = c.grey },
+		--
+		-- @tag.builtin is lowercase html (div, section); @tag is a capitalised
+		-- component (<Box>). Treesitter gives components BOTH captures and
+		-- applies @tag last, so the two can be coloured independently.
+		["@tag"] = { fg = c.red }, -- imported / user components
+		["@tag.builtin"] = { fg = c.jsx_tag }, -- div, h2, section ...
+		["@tag.attribute"] = { fg = c.jsx_attr }, -- className=, as=, href=
+		["@tag.delimiter"] = { fg = c.jsx_bracket }, -- < > </ />
+		["@markup.raw.block"] = { fg = c.jsx_text },
+
+		-- `import` / `from` / `type` read as their own thing, distinct from
+		-- other keywords, since import blocks sit apart at the top of a file.
+		["@keyword.import"] = { fg = c.jsx_import },
 
 		["@markup.strong"] = { fg = c.fg, bold = true },
 		["@markup.italic"] = { fg = c.fg, italic = true },

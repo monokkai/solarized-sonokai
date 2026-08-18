@@ -168,7 +168,7 @@ function M.get(c)
 		-- @tag.builtin is lowercase html (div, section); @tag is a capitalised
 		-- component (<Box>). Treesitter gives components BOTH captures and
 		-- applies @tag last, so the two can be coloured independently.
-		["@tag"] = { fg = c.red }, -- imported / user components
+		["@tag"] = { fg = c.jsx_component }, -- <Header>, <BasicPage>, ...
 		["@tag.builtin"] = { fg = c.jsx_tag }, -- div, h2, section ...
 		["@tag.attribute"] = { fg = c.jsx_attr }, -- className=, as=, href=
 		["@tag.delimiter"] = { fg = c.jsx_bracket }, -- < > </ />
